@@ -1,14 +1,25 @@
 import styled from 'styled-components';
 import diceImg from '../../images/icon-dice.svg';
+import hrDesktop from '../../images/pattern-divider-desktop.svg';
+import hrMobile from '../../images/pattern-divider-mobile.svg';
 
 const StyledCard = styled.main`
   width: 40%;
-  min-height: 200px;
+  min-height: 220px;
   border-radius: 20px;
   background-color: hsl(217, 19%, 24%);
   padding: 40px;
 
   position: relative;
+
+  display: grid;
+  place-items: start center;
+
+  @media (max-width: 768px) {
+    width: 85%;
+    padding: 30px;
+    min-height: 300px;
+  }
 `;
 
 const DiceButton = styled.button`
@@ -47,12 +58,18 @@ const Advice = styled.blockquote`
   text-align: center;
 `;
 
+const Divider = styled.img`
+  margin-bottom: 20px;
+`
+
 export const Card = (props) => {
   const { id, advice } = props.advice;
   return (
     <StyledCard>
       <Header>Advice # {id}</Header>
       <Advice>&ldquo;{advice}&rdquo;</Advice>
+
+      <Divider src={window.innerWidth < 500 ? hrMobile : hrDesktop} alt="" />
 
       <DiceButton onClick={props.fetchNewAdvice}>
         <img src={diceImg} alt="Click to generate a random advice" />
