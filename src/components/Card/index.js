@@ -2,15 +2,14 @@ import styled from 'styled-components';
 import diceImg from '../../images/icon-dice.svg';
 
 const StyledCard = styled.main`
-
-width: 40%;
-min-height: 200px;
-border-radius: 20px;
+  width: 40%;
+  min-height: 200px;
+  border-radius: 20px;
   background-color: hsl(217, 19%, 24%);
   padding: 40px;
 
   position: relative;
-`
+`;
 
 const DiceButton = styled.button`
   width: 70px;
@@ -27,6 +26,10 @@ const DiceButton = styled.button`
 
   left: 50%;
   transform: translate(-50%, -0%);
+
+  &:hover {
+    box-shadow: 0px 0px 30px hsl(150, 100%, 66%);
+  }
 `;
 
 const Header = styled.h1`
@@ -36,13 +39,13 @@ const Header = styled.h1`
   letter-spacing: 2px;
   font-weight: 600;
   text-align: center;
-`
+`;
 
 const Advice = styled.blockquote`
   font-size: 28px;
   color: hsl(193, 38%, 86%);
   text-align: center;
-`
+`;
 
 export const Card = (props) => {
   const { id, advice } = props.advice;
