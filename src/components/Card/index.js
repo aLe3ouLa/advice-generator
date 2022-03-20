@@ -48,7 +48,6 @@ const Header = styled.h1`
   color: hsl(150, 100%, 66%);
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: 600;
   text-align: center;
 `;
 
@@ -56,6 +55,7 @@ const Advice = styled.blockquote`
   font-size: 28px;
   color: hsl(193, 38%, 86%);
   text-align: center;
+  font-weight: 800;
 `;
 
 const Divider = styled.img`
