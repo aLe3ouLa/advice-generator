@@ -51,7 +51,7 @@ export const Card = (props) => {
       <Header>Advice # {id}</Header>
       <Advice>&ldquo;{advice}&rdquo;</Advice>
 
-      <DiceButton>
+      <DiceButton onClick={props.fetchNewAdvice}>
         <img src={diceImg} alt="Click to generate a random advice" />
       </DiceButton>
     </StyledCard>

@@ -6,10 +6,10 @@ function App() {
   const [advice, setAdvice] = useState({ id: 0, advice: '...' });
 
   useEffect(() => {
-    getAdvice();
+    fetchAdvice();
   }, [])
 
-  const getAdvice = () => {
+  const fetchAdvice = () => {
     fetch('https://api.adviceslip.com/advice')
       .then(result => result.json())
       .then(data => setAdvice(data.slip))
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div style={{ display: 'grid', placeItems: 'center', height: '100vh' }}>
-      <Card advice={advice} />
+      <Card advice={advice} fetchNewAdvice={fetchAdvice} />
     </div>
   );
 }
