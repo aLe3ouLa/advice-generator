@@ -23,8 +23,8 @@ const StyledCard = styled.main`
 `;
 
 const DiceButton = styled.button`
-  width: 70px;
-  height: 70px;
+  width: 65px;
+  height: 65px;
   background-color: hsl(150, 100%, 66%);
   border-radius: 50%;
   border: none;
@@ -39,7 +39,7 @@ const DiceButton = styled.button`
   transform: translate(-50%, -0%);
 
   &:hover {
-    box-shadow: 0px 0px 30px hsl(150, 100%, 66%);
+    box-shadow: 0px 0px 28px hsl(150, 100%, 66%);
   }
 `;
 
