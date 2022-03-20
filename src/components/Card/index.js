@@ -38,12 +38,18 @@ const Header = styled.h1`
   text-align: center;
 `
 
+const Advice = styled.blockquote`
+  font-size: 28px;
+  color: hsl(193, 38%, 86%);
+  text-align: center;
+`
+
 export const Card = (props) => {
   const { id, advice } = props.advice;
   return (
     <StyledCard>
       <Header>Advice # {id}</Header>
-      <blockquote>&ldquo;{advice}&rdquo;</blockquote>
+      <Advice>&ldquo;{advice}&rdquo;</Advice>
 
       <DiceButton>
         <img src={diceImg} alt="Click to generate a random advice" />

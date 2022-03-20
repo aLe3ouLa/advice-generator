@@ -1,9 +1,23 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import { Card } from "./components/Card";
 
 function App() {
+  const [advice, setAdvice] = useState({ id: 0, advice: '...' });
+
+  useEffect(() => {
+    getAdvice();
+  }, [])
+
+  const getAdvice = () => {
+    fetch('https://api.adviceslip.com/advice')
+      .then(result => result.json())
+      .then(data => setAdvice(data.slip))
+  }
+
   return (
-    <div className="App">
-      <Card advice={{ id: "1", advice: "hello" }} />
+    <div style={{ display: 'grid', placeItems: 'center', height: '100vh' }}>
+      <Card advice={advice} />
     </div>
   );
 }
