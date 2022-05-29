@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { IAdvice } from '../../App';
 import diceImg from '../../images/icon-dice.svg';
 import hrDesktop from '../../images/pattern-divider-desktop.svg';
 import hrMobile from '../../images/pattern-divider-mobile.svg';
@@ -60,9 +61,11 @@ const Advice = styled.blockquote`
 
 const Divider = styled.img`
   margin-bottom: 20px;
-`
+`;
 
-export const Card = (props) => {
+export const Card: React.FC<{ advice: IAdvice; fetchNewAdvice: () => void }> = (
+  props
+) => {
   const { id, advice } = props.advice;
   return (
     <StyledCard>
